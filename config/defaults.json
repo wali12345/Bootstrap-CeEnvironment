@@ -1,0 +1,48 @@
+{
+  "scriptVersion": "1.0.0",
+  "paths": {
+    "logDir": "C:\\Temp",
+    "breadcrumb": "%LOCALAPPDATA%\\CeBootstrap\\last-run.json",
+    "stagingDir": "%TEMP%\\CeBootstrap"
+  },
+  "pacCli": {
+    "dotnetToolId": "Microsoft.PowerApps.CLI.Tool",
+    "wingetId": "Microsoft.PowerAppsCLI",
+    "msiUrl": "https://aka.ms/PowerAppsCLI",
+    "authProfileName": "CeBootstrap"
+  },
+  "environment": {
+    "types": ["Sandbox", "Production", "Developer", "Trial"],
+    "defaultType": "Sandbox",
+    "regions": ["unitedkingdom", "europe", "unitedstates", "canada", "australia", "asia", "india", "japan", "france", "germany", "switzerland"],
+    "defaultRegion": "unitedkingdom",
+    "defaultCurrency": "GBP",
+    "defaultLanguage": "1033",
+    "fallbackTemplates": ["D365_FieldService", "D365_Sales", "D365_SalesPro", "D365_CustomerService", "D365_CustomerServicePro", "D365_ProjectServiceAutomation"],
+    "defaultTemplates": ["D365_FieldService"],
+    "createTimeoutMinutes": 180,
+    "displayNameMaxLength": 100
+  },
+  "applications": {
+    "catalog": [
+      { "uniqueName": "PowerPages_CustomerPortal_V2", "description": "Power Pages customer portal", "default": true },
+      { "uniqueName": "msdyn_OmnichannelPrimeProactiveAIAnchor", "description": "Omnichannel (proactive AI anchor)", "default": true }
+    ],
+    "timeoutMinutes": 300,
+    "pollSeconds": 300,
+    "defaultSecurityRole": "System Administrator"
+  },
+  "marketing": {
+    "appName": "Dynamics 365 Marketing Application",
+    "adminCenterUrl": "https://admin.powerplatform.microsoft.com/",
+    "notStartedLimitMinutes": 60,
+    "timeoutMinutes": 300
+  },
+  "devTools": [
+    { "name": "Git", "wingetId": "Git.Git", "command": "git", "reason": "Work with your solution repositories", "default": true },
+    { "name": "Node.js LTS", "wingetId": "OpenJS.NodeJS.LTS", "command": "node", "reason": "Build PCF controls", "default": true },
+    { "name": ".NET 8 SDK", "wingetId": "Microsoft.DotNet.SDK.8", "command": "dotnet", "reason": "pac CLI and plugin builds", "default": true },
+    { "name": "Visual Studio Code", "wingetId": "Microsoft.VisualStudioCode", "command": "code", "reason": "Web resources, PCF and scripts", "default": false },
+    { "name": "Visual Studio 2022 Professional", "wingetId": "Microsoft.VisualStudio.2022.Professional", "command": "", "reason": "Plugins (.NET Framework). Needs a licence; add the '.NET desktop development' workload afterwards", "default": false }
+  ]
+}
